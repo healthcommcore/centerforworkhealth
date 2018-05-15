@@ -1,0 +1,151 @@
+<?php
+// $Id$
+/**
+ * @file
+ * Report view using data from a separate view
+ *
+ * ARM report provides a customized view interface from values passed 
+ * by a separate view that uses Views Bulk Operations. This view is meant for 
+ * ARM staff to create safety reports based on observations recorded by worksite
+ * observers.
+ */
+
+/**
+ * Implements hook_menu().
+ */
+function arm_report_menu() {
+  $items['admin/arm-observation-report'] = array(
+    'title' => 'ARM Observation report',
+    'page callback' => 'arm_report_layout',
+	'access arguments' => array('access arm report'),
+	'type' => MENU_CALLBACK,
+  );
+  return $items;
+}
+
+/**
+ * Implements hook_permission().
+ */
+function arm_report_permission() {
+  $permissions = array(
+    'access arm report' =>  array(
+      'title' => t('Access ARM Report'),
+      'description' => t('View the ARM Report once observations selected'),
+      'restrict access' => TRUE,
+    ),
+  );
+  return $permissions;
+}
+
+/**
+ * Implements hook_preprocess_html()
+function template_preprocess_html(&$variables){
+	drupal_add_css(base_path() .
+	'/sites/all/modules/custom/arm_report/arm_report.css', array('media'=>'all');
+}
+ */
+
+function arm_report_layout() {
+  //global $conf;
+  $selections = variable_get('selections', $default = NULL);
+  $labels = generate_labels($selections);
+
+  //dpm($selections);
+  return theme('arm_report_layout', array('selections' => $selections, 'labels' => $labels));
+}
+
+/**
+ * Implements hook_theme().
+ */
+function arm_report_theme() {
+  return array(
+	  'arm_report_layout' => array(
+		  'template' => 'arm-report-layout',
+			'variables' => array('selections' => NULL, 'labels' => NULL),
+		),
+	);
+}
+  
+    
+/**
+ * Implementation of hook_action_info().
+ */
+function arm_report_action_info() {
+  return array(
+    'arm_report_generate_report_action' => array(
+      'label' => t('Generate ARM Report'),
+      'type' => 'entity',
+      'aggregate' => TRUE,
+      'configurable' => FALSE,
+      'hooks' => array(),
+      'triggers' => array('any'),
+	  'pass rows' => TRUE,
+    ),
+  );
+}
+
+/**
+* Implementation of a Drupal action.
+*/
+function arm_report_generate_report_action($entities, $context = array()) {
+  //dpm($context['rows'][0]->field_field_arm_observer_name[0]['raw']['value']);
+  $selections = clean_selections($context['rows']); 
+  //dpm($context['rows']);
+  variable_set('selections', $selections);
+  drupal_goto('admin/arm-observation-report');
+}
+
+function clean_selections($raw_data) {
+  $selections = array();
+  $indices = array_keys($raw_data);
+  for($i = 0; $i < count($raw_data); $i++) {
+		$index = intval($indices[$i]);
+		// Need to use URI index and clean the string to isolate the actual
+		// file name for the uploaded photo
+		$img = $raw_data[$index]->field_field_arm_photo[0]['raw']['uri'];
+		$selections[$i]['photo'] = str_replace('public://', '', $img);
+		$date_submitted = $raw_data[$index]->entityform_created;
+		$selections[$i]['date_submitted'] = date('m/d/Y', $date_submitted);
+		$selections[$i]['worksite'] = $raw_data[$index]->users_entityform_name;
+		$date_observed = strip_tags($raw_data[$index]->field_field_arm_date_observed[0]['rendered']['#markup']);
+		$selections[$i]['date_observed'] = $date_observed;
+		$selections[$i]['subcontractor_name'] = $raw_data[$index]->field_field_arm_subcontractor_name[0]['raw']['value'];
+		$selections[$i]['activity_type'] = $raw_data[$index]->field_field_arm_activity_type[0]['raw']['value'];
+		$selections[$i]['task_performed'] = $raw_data[$index]->field_field_arm_task_performed[0]['raw']['value'];
+		$selections[$i]['observation'] = $raw_data[$index]->field_field_arm_observation_descr[0]['raw']['value'];
+		if(!empty($raw_data[$index]->field_field_arm_recommendation[0]['raw']['value'])) {
+			$selections[$i]['recommendation'] = $raw_data[$index]->field_field_arm_recommendation[0]['raw']['value'];
+		}
+		else {
+			$selections[$i]['recommendation'] = "";
+		}
+  }
+  return $selections;
+}
+
+function generate_labels($selections) {
+  $labels = array();
+  $raw = array_keys($selections[0]);
+  foreach($raw as $label) {
+    $labels[$label] = ucfirst(str_replace("_", " ", $label));
+  }
+  return $labels;
+}
+
+     
+/**
+ * Implements hook_views_bulk_operations_form_alter().
+ */
+function arm_report_views_bulk_operations_form_alter(&$form, &$form_state, $vbo) {
+  //$form['select']['operation']['#access'] = FALSE;
+  if ($form_state['step'] == 'views_form_views_form') {
+    // Alter the first step of the VBO form (the selection page).
+    $form['select']['#type']['#access'] = FALSE;
+  }
+  elseif ($form_state['step'] == 'views_bulk_operations_config_form') {
+    // Alter the configuration step of the VBO form.
+  }
+  elseif ($form_state['step'] == 'views_bulk_operations_confirm_form') {
+    // Alter the confirmation step of the VBO form.
+  }
+}

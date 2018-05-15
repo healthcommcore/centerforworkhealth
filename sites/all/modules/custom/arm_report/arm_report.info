@@ -1,0 +1,11 @@
+;$Id$
+name = ARM report generator
+description = A tool used in conjunction with Views, Views Bulk Operations, and EntityForm to generate a report based on observer submissions in the ARM project. This report features a specific layout and the option to add comments and export as PDF.
+core = 7.x
+package = Views
+dependencies[] = views
+dependencies[] = views_bulk_operations
+dependencies[] = entityform
+files[] = arm_report.module
+;stylesheets[all][] = arm_report.css
+;stylesheets[print][] = arm_print.css

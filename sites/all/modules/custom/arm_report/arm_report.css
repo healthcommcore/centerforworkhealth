@@ -1,0 +1,23 @@
+/** General **/
+.breadcrumb, .printonly{display:none;}
+h2{color:#999;}
+.arm_report table{font-size:1.05em;}
+.view-arm-observation-selection .views-exposed-form{width:500px; margin-bottom:40px;}
+.pdfexport{background:#FFF4D2; color:#B22D00; border:#FFB973 4px solid; padding:15px 25px; font-size:1.3em; line-height:1.5em;}
+
+/* Additional comments */
+.comment_area{margin:30px 0;}
+.comment_area label{position:absolute; left:-100000px;}
+.comment_box{width:50%; border:#bbb 1px solid;}
+.arm_button{margin:10px 0;}
+/*.back_pdf_buttons{float:right; width:40%;}*/
+
+/* Results table */
+.observation{margin-bottom:50px;}
+.observation:before{content:""; display:block; clear:both;}
+.arm_img{width:380px; vertical-align:top}
+.arm_img img{width:350px;}
+.observation table{border:none;}
+.arm_data{}
+.observation td{padding:2px 0;}
+.observation td:last-child{border:none;}

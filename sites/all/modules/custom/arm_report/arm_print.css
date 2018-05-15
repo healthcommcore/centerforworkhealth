@@ -1,0 +1,14 @@
+body{margin-top:-10px !important; font-family:Arial, Helvetica, sans-serif; font-size:9pt;}
+header, nav, #main, .back_pdf_buttons, #overlay-titlebar, #toolbar, .webonly, #branding{display:none;}
+.arm_report{position:absolute; top:20px; padding-left:30px;}
+.comment_area{margin:10px 0 5px 0;}
+.comment_box{border:none; min-height:10px; background:none;}
+#overlay{width:100%; margin: 0 0 0 0; display:block !important;}
+#page{overflow:visible;}
+.arm_img{width:300px;}
+.arm_img img{width:280px;}
+.observation{display:block; page-break-inside:avoid; margin-bottom:20px;}
+h1{margin:5px 0;}
+.printonly{display:block;}
+textarea{resize:none; height:40px;}
+.observation table{border-top:#fff 2px solid;}

@@ -41,7 +41,7 @@
       </div>
       <form id="tracking-form" action="/tracking/tracking.php" method="post">
         <div class="modal-body">
-          <p>To download <em>Implementing an Integrated Approach</em>, please provide the following information.  We may email you in the future to learn how our resource is being used in your organization. Thank you.</p>
+          <p>To download this document, please provide the following information.  We may email you in the future to learn how our resource is being used in your organization. Thank you.</p>
           <div class="form-item form-type-textfield form-item-name">
             <label>First name</label>
             <input type="text" id="first_name" name="first_name" class="form-text" placeholder="First name" required />
@@ -58,7 +58,7 @@
             <label>Email</label>
             <input type="text" id="email"  name="email" class="form-text" placeholder="Email" required />
           </div>
-          <input type="hidden" id="saved-filename" />
+          <input data-url="" type="hidden" name="tracking-docname" id="tracking-docname" />
           <!--<div class="g-recaptcha" data-sitekey="6LeaDjkUAAAAAMSnQ3OWoiDNlesSDxDMgXU0pZbt"> </div>-->
           <!--<input type="hidden" name="recaptcha_field" id="recaptcha_field" />-->
         </div>
@@ -79,12 +79,14 @@
     trackingModal.hide();
     $('.activate-modal').on('click', function (e) {
       trackingModal.show();
-      var id = e.target.id;
+      console.log(e.target.dataset.docname);
+      var docname = e.target.dataset.docname;
       var href = e.target.href;
-      var regex = new RegExp(id);
+      var regex = new RegExp(docname);
       if ( !regex.test(document.cookie)) {
         $('#tracking-modal').modal('show');
-        $('#tracking-modal #saved-filename').val(href);
+        $('#tracking-modal #tracking-docname').attr('data-url', href);
+        $('#tracking-modal #tracking-docname').val(docname);
       }
       else {
         downloadFile(href);
@@ -115,9 +117,10 @@
           $('#tracking-modal').modal('hide');
           trackingModal.hide();
           var date = new Date('2050, 1, 1');
+          var docname = $('#tracking-docname').val();
+          var href = $('#tracking-docname').attr('data-url');
           date = date.toUTCString();
-          document.cookie="guidelines=true;expires=" + date;
-          var href = $('#saved-filename').val();
+          document.cookie= docname + "=true;expires=" + date;
           downloadFile(href);
         }
       });

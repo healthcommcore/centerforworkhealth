@@ -1,16 +1,28 @@
 <?php
 
 // Constants for specifying email parameters and redirect location
-define('SUBJECT', 'Integrated Approach guidelines downloaded');
+
 define('MAILTO', 'Lisa_Burke@dfci.harvard.edu');
 //define('MAILTO', 'dave_rothfarb@dfci.harvard.edu');
 define('FROM', 'centerforworkhealth@sph.harvard.edu');
 define('BCC', 'dave_rothfarb@dfci.harvard.edu');
-define('REDIRECT', 'http://centerforworkhealth.sph.harvard.edu/guidelines');
-//define('REDIRECT', 'http://cwhwb.hccdev.org/sites/default/files/10.12.17_Guidelines_Screen_post.pdf');
+define('REDIRECT', 'http://centerforworkhealth.sph.harvard.edu/');
+
+$docname = $_POST["tracking-docname"];
+
+$subject_arr = array(
+  "guidelines" => array(
+    "subject" => "Integrated Approach guidelines"
+  ),
+  "wish-assessment" => array(
+    "subject" => "WISH assessment"
+  )
+);
+
+$subject = $subject_arr[$docname]["subject"];
 
 // Quick email message intro and extra headers for "from" and "Bcc" fields
-$message_intro = "Someone has downloaded the Integrated Approach guide\n\n";
+$message_intro = "Someone has downloaded the $subject\n\n";
 $headers = array('From: ' . FROM, 'Bcc: ' . BCC);
 
 // First make sure all submitted form fields have been filled out
@@ -26,11 +38,11 @@ if ( isset($_POST["first_name"]) && isset($_POST["last_name"]) &&
 // Build the email message with message intro as assigned above and the
 // makeIntoMessage function which cleans and stringifies the $vals array
   $message = $message_intro . makeIntoMessage($vals);
-  mail(MAILTO, SUBJECT, $message, implode("\r\n", $headers) );
+  mail(MAILTO, $subject . " downloaded", $message, implode("\r\n", $headers) );
   //header('Content-Type: application/pdf');
   //header('Content-Disposition: attachement; filename="guidelines.pdf"');
   //readfile('../sites/default/files/10.12.17_Guidelines_Screen_post.pdf');
-  header('Location: ' . REDIRECT);
+  header('Location: ' . REDIRECT . $docname);
   //echo $message;
 }
 else {

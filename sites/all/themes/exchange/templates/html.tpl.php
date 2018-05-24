@@ -37,7 +37,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">X</button>
-        <h4 class="modal-title">Download the Guide</h4>
+        <h4 class="modal-title">Download the document</h4>
       </div>
       <form id="tracking-form" action="/tracking/tracking.php" method="post">
         <div class="modal-body">

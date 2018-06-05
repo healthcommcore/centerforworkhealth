@@ -292,10 +292,15 @@ h3{color:#878787; font-size:1.1em; margin:0; line-height:1.3em;}
 #sidebar .submenu{font-family:'ralewaylight';margin-top:6px;}
 #sidebar .submenu ul, #sidebar .submenu li{list-style:none; list-style-image:none;}
 .submenu ul{margin-right:15px;}
-.submenu li{text-align:right; padding-bottom:15px;}
+.submenu li{padding-bottom:15px;}
 .submenu a{font-size:1.4em; line-height: 1.2em;}
 .submenu a:hover, .submenu a.active{color:#00466B;}
 .submenu a:hover, .topmenu a:hover{text-decoration:none;}
+#sidebar .submenu .active-trail .menu, #sidebar .submenu .active .menu {margin-top: 8px; margin-left: 8px;}
+.submenu .expanded .menu {display:none}
+.submenu .expanded.active-trail .menu, .submenu .expanded.active .menu {display:block;}
+.submenu .active-trail .menu li, .submenu .active .menu li {padding-bottom: 7px;}
+.submenu .active-trail .menu a, .submenu .active .menu a {font-size: 1.16em;}
 
 /* Top menu */
 .topmenu {margin-bottom:14px; min-width:200px;}
@@ -364,6 +369,13 @@ h3{color:#878787; font-size:1.1em; margin:0; line-height:1.3em;}
 .news-archive .item-list ul li{margin-bottom:10px; }
 #sidebar .news-archive ul li{list-style-image:none; list-style-type:none;}
 
+.social-media-icons ul {float: right; margin-bottom: 0; margin-top: 10px;}
+.social-media-icons li {float: left; list-style: none; margin-left: 15px;}
+.social-media-icons a {display: block; width: 35px; height: 34px; background-image: url("images/all_social_media_logos.png"); background-repeat: none; opacity: 0.6;}
+.social-media-icons a:hover {opacity: 0.9;}
+.social-media-icons .twitter-logo {background-position: 0 0;}
+.social-media-icons .linkedin-logo {background-position: 70px 0;}
+.social-media-icons .email-logo {background-position: 35px 0;}
 div.footer_logos{margin: 10px 0 0 0;}
 div.footer_logos, div.footer_logos a{float:left;}
 .footer_logos a{position:relative;}

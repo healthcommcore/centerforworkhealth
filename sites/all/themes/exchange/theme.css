@@ -320,7 +320,7 @@ h3{color:#878787; font-size:1.1em; margin:0; line-height:1.3em;}
 
 /* homepage stuff */
 .home_message{position:absolute; margin:-74px 0 0 0;z-index:100;background:#00466B; padding:8px 0 10px 0; opacity:0.85;}
-.home_message h1{font-family:'ralewayextralight';opacity:1; color:#fff; margin:10px 0 10px 28px; line-height:1em; font-size:2.3em;}
+.home_message h1{font-family:'ralewayextralight';opacity:1; color:#fff; margin:10px 0; line-height:1em; font-size:2.3em; text-align: center;}
 #home_news{font-size:0.9em; line-height:1.35em;}
 #home_news h3, .news-archive h3{color:#207BA2; font-family:Open Sans; font-size:1.4em;}
 #home_news h3{margin:30px 0 5px 0;}
@@ -346,6 +346,67 @@ h3{color:#878787; font-size:1.1em; margin:0; line-height:1.3em;}
 .action_list a{text-decoration:underline;}
 .action_button:hover{text-decoration:none; opacity:0.6;}
 .action_button span.bigword{color:#D12C2C; font-size:1.3em; margin-right:5px;}
+
+.home_area {
+  margin-top: 30px;
+}
+
+.span5.no-span-margin {
+  margin-left: 7px;
+}
+
+.home-left .content,
+.home-right .content {
+  margin-top: 15px;
+}
+
+.home-right {
+  border-left: #5382A2 1px solid;
+}
+
+.span7.home-right {
+  margin-left: 40px;
+}
+
+.home-right .block {
+  margin-left: 72px;
+}
+
+.home-right h3 {
+  color: #5382A2;
+  font-weight: normal;
+  font-family:'ralewaylight';
+  font-size: 1.7em;
+  border-bottom: #5382A2 1px solid;
+  line-height: 1.6em;
+}
+
+.home-right .news-events {
+}
+
+.home-right .news-events h3,
+.home-right .news-events .content {
+  width: 75%;
+  margin-top: 20px;
+  padding-left: 20px;
+}
+
+.home-button {
+  background: #e34d26;
+  color: #fff;
+  display: block;
+  text-align: center;
+  width: 80%;
+  margin-bottom: 36px;
+  line-height: 1.3em;
+  font-family:'ralewaylight';
+  padding: 12px 0;
+  font-size: 1.3em;
+}
+
+.home-button:hover {
+  color: #fff;
+}
 
 .twitter-block {
   border-top: #cc3333 1px solid;
@@ -1792,6 +1853,12 @@ input, textarea, select, fieldset {
 	-webkit-box-shadow: 0 1px 1px #d5d5d5, inset 0 1px 0 #cae295;
 	-moz-box-shadow: 0 1px 1px #d5d5d5, inset 0 1px 0 #cae295;
 	box-shadow: 0 1px 1px #d5d5d5, inset 0 1px 0 #cae295;  
+}
+
+
+.button.cwhwb-orange, .cwhwb-organge input.form-submit {
+  background: #1F546E;
+  color: #fff;
 }
 
 .button.white, .white input.form-submit {

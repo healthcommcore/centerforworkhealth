@@ -15,8 +15,8 @@ scripts[] = js/exchange.js
 plugins[panels][layouts] = layouts
 
 regions[sidebar_first] = Sidebar
-regions[home_news] = Home news
-regions[home_buttons] = Home buttons
+regions[home_left] = Home left
+regions[home_right] = Home right
 regions[inside_header] = Inside header
 regions[content] = Content
 regions[featured] = Featured

@@ -88,15 +88,15 @@
 			</div>
 		<?php endif; ?>
 		
-<div class="row <?php echo ($page['home_news'] || $page['home_buttons']) ? 'home_area' : ''; ?>">
-			<?php if ($page['home_news']): ?>
-				<div id="home_news" class="span3">
-					<?php print render($page['home_news']); ?>
+<div class="row <?php echo ($page['home_left'] || $page['home_right']) ? 'home_area' : ''; ?>">
+			<?php if ($page['home_left']): ?>
+				<div id="home_left" class="span5 no-span-margin home-left">
+					<?php print render($page['home_left']); ?>
 				</div>
 			<?php endif; ?>
-			<?php if ($page['home_buttons']): ?>
-				<div id="home_buttons" class="span9">
-					<?php print render($page['home_buttons']); ?>
+			<?php if ($page['home_right']): ?>
+				<div id="home_right" class="span7 home-right">
+					<?php print render($page['home_right']); ?>
 				</div>
 			<?php endif; ?>
 			<?php if(!drupal_is_front_page()) : ?>

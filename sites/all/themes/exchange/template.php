@@ -187,8 +187,18 @@ function exchange_preprocess_html(&$variables) {
 				'content' => $variables['page']['content']['metatags']['global:frontpage']['keywords']['#attached']['drupal_add_html_head'][0][0]['#value']
 			),
 		);
+
+    $xuacompatible = array(
+      '#tag' => 'meta',
+      '#attributes' => array(
+        'http-equiv' => 'X-UA-Compatible',
+        'content' => 'IE=edge, chrome=1'
+      )
+    );
+
 		drupal_add_html_head($description, 'description');
 		drupal_add_html_head($keywords, 'keywords');
+    drupal_add_html_head($xuacompatible, 'http-equiv');
 	}
 
 }

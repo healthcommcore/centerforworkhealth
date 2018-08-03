@@ -360,18 +360,24 @@ h3{color:#878787; font-size:1.1em; margin:0; line-height:1.3em;}
   margin-top: 15px;
 }
 
-.home-right {
-  border-left: #5382A2 1px solid;
+.home-left {
+  border-right: #5382A2 1px solid;
+  padding-right: 40px;
+}
+
+.twitter-feed {
+  margin-top: 40px;
 }
 
 .span7.home-right {
-  margin-left: 40px;
+  margin-left: 0;
 }
 
 .home-right .block {
   margin-left: 72px;
 }
 
+.home-left h3,
 .home-right h3 {
   color: #5382A2;
   font-weight: normal;

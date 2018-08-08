@@ -629,11 +629,12 @@ div.footer_logos .northeastern{margin-top:13px; width:80%;}
 	#home_buttons .action_container:nth-of-type(2){margin:5px auto; padding:8px 0; border-right:none; border-left:none;border-top:#5382A2 1px solid; border-bottom:#5382A2 1px solid;}
 	#home_buttons .action_button{padding: 8px 10px 8px 39px; display:table; margin:0 auto;}
 	.action_list{line-height:1em;}
-	div.footer_logos img{float:left;}
 	footer .span4{width:100%;}
 	.action_list, div.footer_links nav, div.footer_links, div.footer_logos{
 		float:none; display:table; margin:0 auto;
 	} 
+  .home-right .block {margin: 0 auto;}
+  .home-button {width: 90%; margin: 0 auto 30px auto;}
 	div.footer_links nav{font-size:0.9em;}
 	div.footer_links p{margin:0;}
 	div.footer_links{text-align:center;}
@@ -645,9 +646,12 @@ div.footer_logos .northeastern{margin-top:13px; width:80%;}
 	section ul{margin-left:30px;}
 	.project_aside{margin:10px 0 20px 0; width:89%; font-size:0.9em; padding:10px 20px; line-height:1.5em;}
 
+  div.footer_logos img {margin: 0 auto; display: block;}
 	div.footer_logos{margin:0 auto;}
-	div.footer_logos a{margin:0 auto; float:none; display:block; padding:25px 0;}
+	div.footer_logos a{margin:0 auto; float:none; display:block; padding:15px 0; width: 100%;}
 	div.footer_logos .northeastern{margin-top:0;}
+  .social-media-icons {text-align: center; margin-bottom: 15px;}
+  .social-media-icons ul {float: none; display: inline-block; margin-left: 0;}
 
 }
 

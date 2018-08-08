@@ -430,6 +430,7 @@ h3{color:#878787; font-size:1.1em; margin:0; line-height:1.3em;}
   text-decoration: underline;
 }
 
+.tracking-honeypot {position: absolute; top: 0; left: -99999px;}
 /* News archive */
 .news-archive{text-align:right; padding-right:15px;}
 .news-archive h3{ margin:-10px 0 15px 0;}

@@ -58,9 +58,8 @@
             <label>Email</label>
             <input type="text" id="email"  name="email" class="form-text" placeholder="Email" required />
           </div>
+          <input type="text" name="tracking-honeypot" class="tracking-honeypot" placeholder="This field is not for human use!" />
           <input data-url="" type="hidden" name="tracking-docname" id="tracking-docname" />
-          <!--<div class="g-recaptcha" data-sitekey="6LeaDjkUAAAAAMSnQ3OWoiDNlesSDxDMgXU0pZbt"> </div>-->
-          <!--<input type="hidden" name="recaptcha_field" id="recaptcha_field" />-->
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -79,7 +78,6 @@
     trackingModal.hide();
     $('.activate-modal').on('click', function (e) {
       trackingModal.show();
-      console.log(e.target.dataset.docname);
       var docname = e.target.dataset.docname;
       var href = e.target.href;
       var regex = new RegExp(docname);

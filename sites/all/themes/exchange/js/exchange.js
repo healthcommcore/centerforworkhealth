@@ -77,7 +77,7 @@ jQuery.fn.responsiveNav = function() {
 			$('#main-menu').removeClass('select-menu');
 		} else {
 			// Hide submenus
-			jQuery('li.expanded ul', this).hide();
+			//jQuery('li.expanded ul', this).hide();
 
 			// Close the menu
 			jQuery('ul.opened').removeClass('opened');

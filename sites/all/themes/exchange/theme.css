@@ -703,19 +703,30 @@ nav ul {
 	position:relative;
 }
 
+#main-menu li.expanded ul,
+#main-menu li.expanded ul li.expanded ul,
+#main-menu li.expanded ul li.expanded ul li.expanded ul {
+	display:none;
+}
+
+#main-menu li.expanded:hover ul,
+#main-menu li.expanded ul li.expanded:hover ul,
+#main-menu li.expanded ul li.expanded ul li.expanded:hover ul {
+	display:block;
+  min-width: 250px;
+}
+
 #main-menu li.expanded ul {
   border:1px solid #292c2d;
   border-width:0 1px;
-	display:none;
 	position:absolute;
-	z-index:10;
-	white-space:nowrap;
+	z-index:101;
 	top:100%;
 	left:-2px;
 }
 
 #main-menu li.expanded li {
-	background:#373b3d url(images/main-menu.png) repeat-x;
+	background:#5C4138;
 	border:none;
 	float:none;
 	margin:0 0;

@@ -369,6 +369,11 @@ h3{color:#878787; font-size:1.1em; margin:0; line-height:1.3em;}
   margin-top: 40px;
 }
 
+.twitter-feed .content {
+  height: 500px;
+  overflow-y: scroll;
+}
+
 .span7.home-right {
   margin-left: 0;
 }

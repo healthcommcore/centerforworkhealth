@@ -30,8 +30,11 @@ $message_intro = "Someone has downloaded the $subject\n\n";
 $headers = array('From: ' . FROM, 'Bcc: ' . BCC);
 
 // First check if honeypot text field used, if so, exit 
-if ( isset($_POST["tracking-honeypot"] ) ) {
-  exit("The honeypot field was filled out and should not have been. Exiting script");
+if ( isset($_POST["tracking-honeypot"])) {
+  $to_test = trim($_POST["tracking-honeypot"]);
+  if( $to_test != "" || !empty($to_test) || strlen($to_test) > 0) {
+    exit("The honeypot field was filled out and should not have been. Exiting script");
+  }
 }
 
 // Next, make sure all submitted form fields have been filled out

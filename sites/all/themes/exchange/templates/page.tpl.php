@@ -123,7 +123,7 @@
 								<div class="<?php print $page['sidebar_first'] ? 'span8' : 'span12'; ?>">
 									<?php print render($title_prefix); ?>
 									<?php if ($title && !$hide_title): ?>
-										<h1 id="page-title">
+										<h1 id="page-title" class="<?php echo $page['is_covid_page'] ? 'covid-title' : 'page-title'; ?>">
 											<?php print $title; ?>
 										</h1>
 									<?php endif; ?>

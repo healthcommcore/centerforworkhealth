@@ -217,6 +217,15 @@ function exchange_process_html(&$variables) {
  * Override or insert variables into the page template.
  */
 function exchange_preprocess_page(&$variables) {
+  if (arg(0) == 'node' && is_numeric(arg(1))) {
+    $node = node_load(arg(1), null, true);
+    if (function_exists("node_class_attributes")) {
+      $is_covid_page = (node_class_attributes($node) == 'covid-page');
+      $variables['page']['is_covid_page'] = $is_covid_page;
+    /*
+    */
+    }
+  }
 	// Load settings
 	$settings['toggle_breadcrumb'] = theme_get_setting('toggle_breadcrumb', 'exchange');
 	$settings['toggle_frontpage_title'] = theme_get_setting('toggle_frontpage_title', 'exchange');

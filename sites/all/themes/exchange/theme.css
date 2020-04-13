@@ -288,6 +288,12 @@ h1{color:#00466B; margin-bottom:18px; line-height:1.15em; font-size:1.6em;}
 h2{color:#9F3A21; margin:10px 0 3px 0; font-size:1.3em; line-height:1.2em;}
 h3{color:#878787; font-size:1.1em; margin:0; line-height:1.3em;}
 
+/* COVID-19 page styles*/
+h1.covid-title{background:#00466B; color: #fff; margin-bottom:18px; line-height:1.15em; font-size:1.6em; }
+.covid-page h2{color:#9F3A21; background: #F3CD86; margin:35px 0 20px; font-size:1.3em; line-height:1.3em; }
+h1.covid-title, .covid-page h2 { padding: 12px 18px; }
+.covid-page .field-item h2:first-child { margin-top: 0; }
+
 .headline{color:#3895BC; font-family:'ralewaylight'; font-size:1.4em; line-height:1.4em;}
 .quoteright{text-align:right;  margin:0px 0 15px 0; padding-right:20px;}
 .floatleft{float:left; margin-right:20px;}

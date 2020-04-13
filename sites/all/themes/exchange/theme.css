@@ -158,6 +158,10 @@ section ul{margin-top:-12px;}
 section li > ul,
 section li > ol {margin-top:0;}
 section li > ul li {list-style-image: none; list-style-type: circle;}
+section h2 + ul, section h3 + ul, section h4 + ul,
+section h2 + ul, section h3 + ul, section h4 + ul {
+  margin-top: 0;
+}
 
 small{font-size:0.846em;} /* 11px */
 

@@ -288,6 +288,28 @@ h1{color:#00466B; margin-bottom:18px; line-height:1.15em; font-size:1.6em;}
 h2{color:#9F3A21; margin:10px 0 3px 0; font-size:1.3em; line-height:1.2em;}
 h3{color:#878787; font-size:1.1em; margin:0; line-height:1.3em;}
 
+/* COVID homepage buttons */
+.covid-btn {
+  background: url('./images/covid_btn_bkgrd.svg') 0 0 no-repeat;
+  display: block;
+  font-size: 1.6em;
+  font-family: 'ralewaymedium';
+  padding: 20px 0;
+  border-bottom: #F3CD86 10px solid;
+}
+
+.home-button, .covid-btn {
+  width: 80%;
+  margin-bottom: 28px;
+  text-align: center;
+  color: #fff;
+}
+
+.covid-btn:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
 /* COVID-19 page styles*/
 h1.covid-title{background:#00466B; color: #fff; margin-bottom:18px; line-height:1.15em; font-size:1.6em; }
 .covid-page h2{color:#9F3A21; background: #F3CD86; margin:35px 0 20px; font-size:1.3em; line-height:1.3em; }
@@ -417,11 +439,7 @@ h1.covid-title, .covid-page h2 { padding: 12px 18px; }
 
 .home-button {
   background: #e34d26;
-  color: #fff;
   display: block;
-  text-align: center;
-  width: 80%;
-  margin-bottom: 36px;
   line-height: 1.3em;
   font-family:'ralewaylight';
   padding: 12px 0;

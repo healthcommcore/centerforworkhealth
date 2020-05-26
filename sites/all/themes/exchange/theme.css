@@ -371,6 +371,10 @@ h1.covid-title, .covid-page h2 { padding: 12px 18px; }
   padding: 29px 0 31px;
 }
 
+.wish-btn {
+  font-size: 1.45em;
+}
+
 .home-button, .covid-btn {
   width: 80%;
   margin-bottom: 28px;

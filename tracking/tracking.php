@@ -19,6 +19,10 @@ $subject_arr = array(
   "wish-assessment" => array(
     "subject" => "WISH assessment",
     "url" => "workplace-integrated-safety-and-health-wish-assessment"
+  ),
+  "interactive-toolbox" => array(
+    "subject" => "Interactive toolbox",
+    "url" => "covid-19-interactive-toolbox-talk"
   )
 );
 

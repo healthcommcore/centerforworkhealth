@@ -51,6 +51,7 @@ if ( isset($_POST["first_name"]) && isset($_POST["last_name"]) &&
     "first_name" => $_POST["first_name"], 
     "last_name" => $_POST["last_name"], 
     "organization" => $_POST["organization"], 
+    "zip_postal_code" => $_POST["zip-postal-code"], 
     "email" => $_POST["email"]
   );
 

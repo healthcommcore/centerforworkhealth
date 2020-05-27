@@ -55,6 +55,10 @@
             <input type="text" id="organization" name="organization" class="form-text" placeholder="Organization" required />
           </div>
           <div class="form-item form-type-textfield form-item-name">
+            <label>Zip/postal code</label>
+            <input type="text" id="zip-postal-code" name="zip-postal-code" class="form-text" placeholder="Zip/postal code" required />
+          </div>
+          <div class="form-item form-type-textfield form-item-name">
             <label>Email</label>
             <input type="text" id="email"  name="email" class="form-text" placeholder="Email" required />
           </div>

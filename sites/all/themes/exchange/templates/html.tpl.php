@@ -137,6 +137,17 @@
   })(jQuery);
 </script>
 
+<!-- spread link -->
+<script>
+(function($){
+  $(".spread-link").on("click", function (e) {
+    console.log("clicked");
+    window.location = $(this).find("a").attr("href");
+    return false;
+  });
+})(jQuery);
+</script>
+
 <!-- Popup window for external links -->
 <script>
 (function($){

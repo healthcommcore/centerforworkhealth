@@ -51,7 +51,7 @@ if ( isset($_POST["first_name"]) && isset($_POST["last_name"]) &&
     "first_name" => $_POST["first_name"], 
     "last_name" => $_POST["last_name"], 
     "organization" => $_POST["organization"], 
-    "zip_postal_code" => $_POST["zip-postal-code"], 
+    "zip_or_postal_code" => $_POST["zip-postal-code"], 
     "email" => $_POST["email"]
   );
 
@@ -72,7 +72,7 @@ else {
 function makeIntoMessage($vals) {
   $message = "";
   foreach($vals as $key => $val) {
-    $message .= ucfirst( str_replace("_", " ", $key)) . ": " . $val . "\r\n";
+    $message .= ucfirst( str_replace("_", " ", $key)) . ": " . $val . "\r\n\n";
   }
   return $message;
 }

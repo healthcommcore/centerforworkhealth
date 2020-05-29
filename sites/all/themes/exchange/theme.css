@@ -302,6 +302,118 @@ h1.covid-title, .covid-page h2 { padding: 12px 18px; }
   margin-top: 12px;
 }
 
+.col-md-3 {
+  width: 29.0%;
+  margin: 13px;
+  float: left;
+}
+
+.btn-covid-homepage {
+  background-image: url("./images/btn-covid-bkgrd-homepage.png");
+  background-repeat: none;
+  height: 80px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  width: 391px;
+  margin-bottom: 27px;
+}
+
+.btn-covid-homepage p {
+  margin-bottom: 0;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  align-items: center;
+}
+
+.btn-covid-homepage a {
+  margin: 0 auto;
+  background-color: #00466B;
+  text-align: center;
+  border: #fff 1px solid;
+  padding: 8px 20px;
+  color: #fff;
+  font-size: 1.5em;
+}
+
+.btn-covid-homepage a,
+.btn-covid-dashboard a {
+  font-family: 'ralewayregular';
+}
+
+.btn-covid-dashboard {
+  background-image: url("./images/btn-covid-bkgrd.png");
+  background-repeat: none;
+  background-size: cover;
+  min-height: 116px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.btn-covid-dashboard .content {
+  display: flex;
+  margin: 0 auto;
+  width: 100%;
+  justify-content: center;
+}
+
+.btn-covid-dashboard p {
+  margin: 0 15px;
+  width: 100%;
+  display: flex;
+}
+
+.btn-covid-dashboard a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-color: #00466B;
+  border: #fff 1px solid;
+  width: 100%;
+  min-height: 54px;
+  color: #fff;
+  line-height: 1.2em;
+}
+
+.btn-covid-homepage a:hover,
+.btn-covid-homepage a:focus,
+.btn-covid-homepage a:active, 
+.btn-covid-dashboard a:hover,
+.btn-covid-dashboard a:focus,
+.btn-covid-dashboard a:active {
+  text-decoration: none;
+}
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .btn-covid-homepage {
+    background-image: url("./images/btn-covid-bkgrd-homepage@2x.png");
+  }
+}
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .btn-covid-dashboard {
+    background-image: url("./images/btn-covid-bkgrd@2x.png");
+  }
+}
+
+@media (min-width: 401px) and (max-width: 640px) {
+  .col-md-3 {
+    width: 42%; 
+  }
+}
+
+@media (max-width: 400px) {
+  .col-md-3 {
+    width: 100%;
+    float: none;
+    margin: 15px 0;
+  }
+}
+
+
 /* sidenav */
 #sidebar .submenu{font-family:'ralewaylight';margin-top:6px;}
 #sidebar .submenu ul, #sidebar .submenu li{list-style:none; list-style-image:none;}

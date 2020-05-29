@@ -424,7 +424,7 @@ h1.covid-title, .covid-page h2 { padding: 12px 18px; }
 .submenu a:hover, .topmenu a:hover{text-decoration:none;}
 #sidebar .submenu .active-trail .menu, #sidebar .submenu .active .menu {margin-top: 8px; margin-left: 8px;}
 .submenu .expanded .menu {display:none}
-.submenu .expanded.active-trail .menu, .submenu .expanded.active .menu {display:block;}
+.submenu .expanded.active-trail .menu, .submenu .expanded.active .menu {display:none;}
 .submenu .active-trail .menu li, .submenu .active .menu li {padding-bottom: 7px;}
 .submenu .active-trail .menu a, .submenu .active .menu a {font-size: 1.16em;}
 
@@ -875,6 +875,10 @@ nav ul {
 	z-index:101;
 	top:100%;
 	left:-2px;
+}
+
+#main-menu li.expanded ul li.expanded ul.menu {
+  display: none;
 }
 
 #main-menu li.expanded li {

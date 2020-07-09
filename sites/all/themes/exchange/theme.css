@@ -302,6 +302,20 @@ h1.covid-title, .covid-page h2 { padding: 12px 18px; }
   margin-top: 12px;
 }
 
+/* BLM styles */
+.blm {
+  color: #fff;
+  background-color: #000;
+  padding: 24px 44px;
+  font-size: 20px;
+  line-height: 1.4em;
+}
+
+.home_message.blm-margin-override {
+  margin: 0;
+  position: relative;
+}
+
 .col-md-3 {
   width: 29.0%;
   margin: 13px;
